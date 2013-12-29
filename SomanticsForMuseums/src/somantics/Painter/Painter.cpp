@@ -31,8 +31,8 @@
 #include "constants.h"
 #include "Settings.h"
 
-#define VISION_WIDTH  320
-#define VISION_HEIGHT 240
+//#define VISION_WIDTH  320
+//#define VISION_HEIGHT 240
 
 // increment and wrap the current colour
 void Painter::nextColour() {

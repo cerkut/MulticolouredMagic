@@ -38,7 +38,7 @@ public:
     
     void setup();
 	void update();
-	void draw(bool multicoloured = false);
+	void draw(bool multicoloured = true);
 	void spawn(float x, float y, float dx, float dy);
     
     

@@ -36,6 +36,7 @@
 #include "Mirror.h"
 #include "Paths.h"
 #include "Tunnel.h"
+#include "Drawer.h"
 
 bool flipX = true;
 bool flipImage = false;
@@ -48,8 +49,8 @@ bool flipImage = false;
 #include <AVFoundation/AVFoundation.h>
 #endif
 
-int NUM_REACTICLES = 10;
-int CURR_REACTICKLE = 0;
+int NUM_REACTICLES = 11;
+int CURR_REACTICKLE = 9;
 void testApp::launch(int i) {
 	CURR_REACTICKLE = i;
 	Reactickle *r = NULL;
@@ -64,6 +65,7 @@ void testApp::launch(int i) {
 		case 7: r = new Mirror(MIRROR_SLITSCAN); break;
 		case 8: r = new Paths(); break;
 		case 9: r = new Tunnel(); break;
+       case 10: r = new Drawer(); break;
 	}
 	if(r!=NULL) {
 		

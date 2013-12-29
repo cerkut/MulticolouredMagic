@@ -56,14 +56,15 @@
 //#include "Cascades.h"
 #include "Paths.h"
 #include "Tunnel.h"
-
+#include "Drawer.h"
 
 void MainMenu::initMenu() {
 	addReactickleButton(new ReactickleButton("Paths"));
 	addReactickleButton(new ReactickleButton("Corridors"));
 	addReactickleButton(new ReactickleButton("Windmills"));
 
-	addReactickleButton(new ReactickleButton("Tunnel"));    
+	addReactickleButton(new ReactickleButton("Tunnel"));
+    addReactickleButton(new ReactickleButton("Drawer"));
 	addReactickleButton(new ReactickleButton("Silhouette"));
 
 	
@@ -105,6 +106,8 @@ void MainMenu::reactickleSelected(string name) {
 		r = new Paths();
 	}else if(name == "Tunnel") {
 		r = new Tunnel();
+    }else if(name == "Drawer") {
+		r = new Drawer();
 	}
 	r->titleImage = ImageCache::getImage(IMAGE_ROOT + "apps/names/" + name + ".png");
 	r->titleImage->setAnchorPercent(0.5, 0.5);

@@ -28,8 +28,24 @@
 
 //
 //  Drawer.h
-//  SomanticsMac
-//
-//  Created by Marek Bereza on 11/07/2011.
-//  Copyright 2011 MAZBOX LTD. All rights reserved.
-//
+#pragma once
+
+#include "ofMain.h"
+#include "Reactickle.h"
+
+
+class Drawer : public Reactickle {
+    
+public:
+	void setup();
+	void update();
+	void draw();
+	
+	
+	bool touchDown(float x, float y, int touchId) {return true;}
+	bool touchUp(float x, float y, int touchId) {return true;}
+	bool touchMoved(float x, float y, int touchId) {return true;}
+	bool needsKinect() { return true; }
+    
+    ofColor fillColor;
+};

@@ -35,3 +35,18 @@
 //
 
 #include "Drawer.h"
+
+void Drawer::setup(){
+    cout << " Drawer just get started here " << endl; // just saying hello
+    fillColor.set(255, 0, 0);
+}
+
+void Drawer::update(){
+}
+
+void Drawer::draw(){
+    ofSetColor(fillColor);
+    ofDrawBitmapString("HELLO DRAWER WORLD!", 100,300);
+    ofNoFill();
+    ofCircle(150, 300, 150);
+}
