@@ -27,7 +27,7 @@
  */
 
 //
-//  Drawer.h
+//  Stub Somantics Drawer.h
 #pragma once
 
 #include "ofMain.h"
