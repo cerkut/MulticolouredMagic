@@ -45,7 +45,14 @@ public:
 	bool touchDown(float x, float y, int touchId) {return true;}
 	bool touchUp(float x, float y, int touchId) {return true;}
 	bool touchMoved(float x, float y, int touchId) {return true;}
-	bool needsKinect() { return true; }
     
     ofColor fillColor;
+    
+#ifndef TARGET_OF_IPHONE
+	
+	ofxCvContourFinder contourFinder;
+	bool needsKinect() { return true; }
+#endif
+
+    
 };

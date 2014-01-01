@@ -26,8 +26,8 @@
  * WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-//
 //  Stub Somantics Drawer.cpp
+//  1.1.2014 Blob tracking & drawing
 
 #include "Drawer.h"
 
@@ -37,6 +37,9 @@ void Drawer::setup(){
 }
 
 void Drawer::update(){
+#ifndef TARGET_OF_IPHONE
+	contourFinder.findContours(*threshImg, 20*20, VISION_WIDTH*VISION_HEIGHT, 10, false);
+#endif
 }
 
 void Drawer::draw(){
@@ -44,4 +47,18 @@ void Drawer::draw(){
     ofDrawBitmapString("HELLO DRAWER WORLD!", 100,300);
     ofNoFill();
     ofCircle(150, 300, 150);
+    
+    // Draw the blobs
+    /*From: Noble, Joshua (2012-01-12). Programming Interactivity (Kindle Locations 15151-15154). O'Reilly Media. Kindle Edition.
+     */
+    for(int i = 0; i < contourFinder.nBlobs; i++) {
+        ofRectangle r = contourFinder.blobs.at(i).boundingRect;
+        r.x += 320; r.y += 240;
+        fillColor.setHsb(i * 64, 255, 255);
+        ofSetColor(fillColor);
+        ofRect(r);
+    }
+    
+ 
+    
 }
